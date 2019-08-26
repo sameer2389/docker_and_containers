@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+ product-service:
+  build: ./Products
+  
+  ports:
+   - 5002:80
+
+
+ website:
+   build: ./Websites
+   ports:
+    - 5010:80
+   depends_on:
+     - product-service
